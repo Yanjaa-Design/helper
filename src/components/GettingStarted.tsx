@@ -19,8 +19,6 @@ const doubleButtons: ReactElement = (
   <StartButtons
     firstText={'Start Return In Browser'}
     firstUrl={urls.startPage}
-    secondText={'Download Desktop Version'}
-    secondUrl={urls.releases}
   />
 )
 const singleButtons: ReactElement = (
