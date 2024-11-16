@@ -77,38 +77,6 @@ export default function GettingStarted(): ReactElement {
       </ul>
       <h2>Get Started</h2>
       {isWeb() ? doubleButtons : singleButtons}
-      <h2>Get Involved!</h2>
-      <p>
-        The success of this project depends on user feedback. If you notice any
-        issues at all with the project, please reach out to us!
-      </p>
-      <ul>
-        <li>
-          File an issue: <Link href={urls.issues}>GitHub Issues</Link>
-        </li>
-        <li>
-          Message us on <Link href={urls.twitter}>Twitter</Link>
-        </li>
-        <li>
-          Think you have something to contribute? Come to our{' '}
-          <Link href={urls.discord}>Discord channel</Link>.
-        </li>
-      </ul>
-      <p>
-        UsTaxes is an open source project maintained by{' '}
-        <Link href={urls.aidan}>Aidan Grimshaw</Link> and{' '}
-        <Link href={urls.zak}>Zak Patterson</Link>.
-      </p>
-      <p>
-        Contributions to the <Link href={urls.repo}>GitHub</Link> repository are
-        welcome.
-      </p>
-      <a href="https://www.netlify.com">
-        <img
-          src={prefersDarkMode ? 'netlify-dark.svg' : 'netlify-light.svg'}
-          alt="Deploys by Netlify"
-        />
-      </a>
     </>
   )
 }
