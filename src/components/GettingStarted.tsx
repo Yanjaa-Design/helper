@@ -15,7 +15,7 @@ const urls = {
   startPage: '/info'
 }
 
-const doubleButtons: ReactElement = (
+const singleButtons: ReactElement = (
   <StartButtons
     firstText={'Start Return In Browser'}
     firstUrl={urls.startPage}
