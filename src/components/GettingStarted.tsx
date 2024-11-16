@@ -33,75 +33,48 @@ export default function GettingStarted(): ReactElement {
   return (
     <>
       <Helmet>
-        <title>Getting Started | UsTaxes.org</title>
+        <title>Getting Started | ITIN Helper</title>
       </Helmet>
-      <h1>UsTaxes.org</h1>
+      <h1>ITIN Helper</h1>
       <p>
-        UsTaxes is an open source tax filing application that can be used to
-        file the Form 1040 United States individual income tax return and some
-        state individual income tax returns. UsTaxes is provided free of charge
-        and requires no sharing of personal data.
+        ITIN Helper is an open source application designed to assist individuals
+        in obtaining an Individual Taxpayer Identification Number (ITIN). It guides
+        users through the process of completing Form W-7, Application for IRS
+        Individual Taxpayer Identification Number. ITIN Helper is provided free of
+        charge and requires no sharing of personal data.
       </p>
       <p>
-        Interested in using UsTaxes? The income forms, return attachments,
-        credits, and states of residency are provided below.
+        Interested in using ITIN Helper? The supported forms, documentation
+        requirements, and eligibility criteria are provided below.
       </p>
-      <h2>Supported Income Forms</h2>
-      The following federal income forms are (mostly) supported:
+      <h2>Supported Forms</h2>
+      ITIN Helper supports the following forms:
       <ul>
-        <li>W2</li>
-        <li>1099-INT</li>
-        <li>1099-DIV</li>
-        <li>1099-B</li>
-        <li>1098-E</li>
+        <li>Form W-7, Application for IRS Individual Taxpayer Identification Number</li>
+        <li>Supporting documentation checklist</li>
+        <li>ITIN renewal application assistance</li>
+      </ul>
+      <h2>Documentation Requirements</h2>
+      ITIN Helper guides you through gathering the following required documents:
+      <ul>
+        <li>Proof of identity (e.g., passport, national ID card)</li>
+        <li>Proof of foreign status</li>
+        <li>Additional supporting documents based on your specific situation</li>
+      </ul>
+      <h2>Eligibility Criteria</h2>
+      ITIN Helper can assist you if you meet the following criteria:
+      <ul>
+        <li>You do not have and are not eligible for a Social Security Number</li>
         <li>
-          1099-R: support for normal distributions from IRA and pension
-          accounts.
+          You have a requirement to obtain an IRS individual taxpayer identification
+          number to file a U.S. tax return or are claimed as a dependent on a U.S.
+          tax return
         </li>
-        <li>SSA-1099</li>
+        <li>You are a nonresident alien required to file a U.S. tax return</li>
+        <li>You are a U.S. resident alien filing a U.S. tax return</li>
+        <li>You are a dependent or spouse of a U.S. citizen/resident alien</li>
+        <li>You are a dependent or spouse of a nonresident alien visa holder</li>
       </ul>
-      UsTaxes can attach the following to your 1040:
-      <ul>
-        <li>Schedule 1 (as related to Schedule E and Schedule SE only)</li>
-        <li>Schedule 2</li>
-        <li>Schedule 3 (as related to excess FICA only)</li>
-        <li>Schedule 8812</li>
-        <li>Schedule A</li>
-        <li>Schedule B</li>
-        <li>Schedule D</li>
-        <li>Schedule E</li>
-        <li>Schedule SE</li>
-        <li>F1040-V</li>
-        <li>F6251 (AMT; only supports exercise of incentive stock options)</li>
-        <li>F8889 (Health Savings Accounts)</li>
-        <li>F8949 (Uncovered Investment Transactions)</li>
-        <li>F8959 (Additional Medicare Tax)</li>
-        <li>F8960 (Net Investment Income Tax)</li>
-        <li>F8995/F8995-A (Qualified Business Income Deduction)</li>
-      </ul>
-      These federal income tax credits are supported:
-      <ul>
-        <li>Credit for Children and Other Dependents</li>
-        <li>Earned Income Tax Credit</li>
-      </ul>
-      <h2>State Income Tax</h2>
-      Note the following states have no income tax filing:
-      <ul>
-        <li>Alaska</li>
-        <li>Tennessee</li>
-        <li>Wyoming</li>
-        <li>Florida</li>
-        <li>New Hampshire</li>
-        <li>South Dakota</li>
-        <li>Texas</li>
-        <li>Washington</li>
-        <li>Nevada</li>
-      </ul>
-      <p>
-        <strong>9</strong>/50 states are supported. If your types of income and
-        state residency are supported, you should be able to use UsTaxes to
-        paper file your return!
-      </p>
       <h2>Get Started</h2>
       {isWeb() ? doubleButtons : singleButtons}
       <h2>Get Involved!</h2>
