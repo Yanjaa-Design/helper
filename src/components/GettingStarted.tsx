@@ -1,141 +1,117 @@
-import { ReactElement } from 'react'
-import { Helmet } from 'react-helmet'
-import { Link, useMediaQuery } from '@material-ui/core'
-import { StartButtons, SingleButtons } from './pager'
-import { isWeb } from 'ustaxes/core/util'
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import Link from "next/link"
+import Image from "next/image"
+import { Github, Twitter, MessageCircle } from 'lucide-react'
 
 const urls = {
-  repo: 'https://github.com/ustaxes/UsTaxes',
-  releases: 'https://github.com/ustaxes/UsTaxes/releases',
-  issues: 'https://github.com/ustaxes/ustaxes/issues',
-  twitter: 'https://twitter.com/ustaxesorg',
-  discord: 'https://discord.gg/dAaz472mPz',
+  repo: 'https://github.com/itinhelper/ITINHelper',
+  releases: 'https://github.com/itinhelper/ITINHelper/releases',
+  issues: 'https://github.com/itinhelper/itinhelper/issues',
+  twitter: 'https://twitter.com/itinhelperorg',
+  discord: 'https://discord.gg/itinhelper',
   aidan: 'https://github.com/thegrims',
   zak: 'https://github.com/zakpatterson',
   startPage: '/info'
 }
 
-const doubleButtons: ReactElement = (
-  <StartButtons
-    firstText={'Start Return In Browser'}
-    firstUrl={urls.startPage}
-    secondText={'Download Desktop Version'}
-    secondUrl={urls.releases}
-  />
-)
-const singleButtons: ReactElement = (
-  <SingleButtons text={'Start Return'} url={urls.startPage} />
-)
-
-export default function GettingStarted(): ReactElement {
-  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
-
+export default function GettingStarted() {
   return (
-    <>
-      <Helmet>
-        <title>Getting Started | UsTaxes.org</title>
-      </Helmet>
-      <h1>UsTaxes.org</h1>
-      <p>
-        UsTaxes is an open source tax filing application that can be used to
-        file the Form 1040 United States individual income tax return and some
-        state individual income tax returns. UsTaxes is provided free of charge
-        and requires no sharing of personal data.
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-4xl font-bold mb-6">ITIN Helper</h1>
+      <p className="mb-4">
+        ITIN Helper is an open source application designed to assist individuals in obtaining an Individual Taxpayer Identification Number (ITIN). It guides users through the process of completing Form W-7, Application for IRS Individual Taxpayer Identification Number. ITIN Helper is provided free of charge and requires no sharing of personal data.
       </p>
-      <p>
-        Interested in using UsTaxes? The income forms, return attachments,
-        credits, and states of residency are provided below.
+      <p className="mb-6">
+        Interested in using ITIN Helper? The supported forms, documentation requirements, and eligibility criteria are provided below.
       </p>
-      <h2>Supported Income Forms</h2>
-      The following federal income forms are (mostly) supported:
-      <ul>
-        <li>W2</li>
-        <li>1099-INT</li>
-        <li>1099-DIV</li>
-        <li>1099-B</li>
-        <li>1098-E</li>
-        <li>
-          1099-R: support for normal distributions from IRA and pension
-          accounts.
-        </li>
-        <li>SSA-1099</li>
+
+      <h2 className="text-2xl font-semibold mb-4">Supported Forms</h2>
+      <p className="mb-2">ITIN Helper supports the following forms:</p>
+      <ul className="list-disc pl-6 mb-4">
+        <li>Form W-7, Application for IRS Individual Taxpayer Identification Number</li>
+        <li>Supporting documentation checklist</li>
+        <li>ITIN renewal application assistance</li>
       </ul>
-      UsTaxes can attach the following to your 1040:
-      <ul>
-        <li>Schedule 1 (as related to Schedule E and Schedule SE only)</li>
-        <li>Schedule 2</li>
-        <li>Schedule 3 (as related to excess FICA only)</li>
-        <li>Schedule 8812</li>
-        <li>Schedule A</li>
-        <li>Schedule B</li>
-        <li>Schedule D</li>
-        <li>Schedule E</li>
-        <li>Schedule SE</li>
-        <li>F1040-V</li>
-        <li>F6251 (AMT; only supports exercise of incentive stock options)</li>
-        <li>F8889 (Health Savings Accounts)</li>
-        <li>F8949 (Uncovered Investment Transactions)</li>
-        <li>F8959 (Additional Medicare Tax)</li>
-        <li>F8960 (Net Investment Income Tax)</li>
-        <li>F8995/F8995-A (Qualified Business Income Deduction)</li>
+
+      <h2 className="text-2xl font-semibold mb-4">Documentation Requirements</h2>
+      <p className="mb-2">ITIN Helper guides you through gathering the following required documents:</p>
+      <ul className="list-disc pl-6 mb-4">
+        <li>Proof of identity (e.g., passport, national ID card)</li>
+        <li>Proof of foreign status</li>
+        <li>Additional supporting documents based on your specific situation</li>
       </ul>
-      These federal income tax credits are supported:
-      <ul>
-        <li>Credit for Children and Other Dependents</li>
-        <li>Earned Income Tax Credit</li>
+
+      <h2 className="text-2xl font-semibold mb-4">Eligibility Criteria</h2>
+      <p className="mb-2">ITIN Helper can assist you if you meet the following criteria:</p>
+      <ul className="list-disc pl-6 mb-4">
+        <li>You do not have and are not eligible for a Social Security Number</li>
+        <li>You have a requirement to obtain an IRS individual taxpayer identification number to file a U.S. tax return or are claimed as a dependent on a U.S. tax return</li>
+        <li>You are a nonresident alien required to file a U.S. tax return</li>
+        <li>You are a U.S. resident alien filing a U.S. tax return</li>
+        <li>You are a dependent or spouse of a U.S. citizen/resident alien</li>
+        <li>You are a dependent or spouse of a nonresident alien visa holder</li>
       </ul>
-      <h2>State Income Tax</h2>
-      Note the following states have no income tax filing:
-      <ul>
-        <li>Alaska</li>
-        <li>Tennessee</li>
-        <li>Wyoming</li>
-        <li>Florida</li>
-        <li>New Hampshire</li>
-        <li>South Dakota</li>
-        <li>Texas</li>
-        <li>Washington</li>
-        <li>Nevada</li>
-      </ul>
-      <p>
-        <strong>9</strong>/50 states are supported. If your types of income and
-        state residency are supported, you should be able to use UsTaxes to
-        paper file your return!
-      </p>
-      <h2>Get Started</h2>
-      {isWeb() ? doubleButtons : singleButtons}
-      <h2>Get Involved!</h2>
-      <p>
+
+      <h2 className="text-2xl font-semibold mb-4">Get Started</h2>
+      <div className="flex flex-col sm:flex-row gap-4 mb-8">
+        <Button asChild>
+          <Link href={urls.startPage}>Start ITIN Application</Link>
+        </Button>
+        <Button asChild variant="outline">
+          <Link href={urls.releases}>Download Desktop Version</Link>
+        </Button>
+      </div>
+
+      <h2 className="text-2xl font-semibold mb-4">Get Involved!</h2>
+      <p className="mb-4">
         The success of this project depends on user feedback. If you notice any
-        issues at all with the project, please reach out to us!
+        issues or have suggestions for improvement, please reach out to us!
       </p>
-      <ul>
-        <li>
-          File an issue: <Link href={urls.issues}>GitHub Issues</Link>
-        </li>
-        <li>
-          Message us on <Link href={urls.twitter}>Twitter</Link>
-        </li>
-        <li>
-          Think you have something to contribute? Come to our{' '}
-          <Link href={urls.discord}>Discord channel</Link>.
-        </li>
-      </ul>
-      <p>
-        UsTaxes is an open source project maintained by{' '}
-        <Link href={urls.aidan}>Aidan Grimshaw</Link> and{' '}
-        <Link href={urls.zak}>Zak Patterson</Link>.
+      <Card>
+        <CardContent className="p-6">
+          <ul className="space-y-2">
+            <li>
+              <Link href={urls.issues} className="flex items-center hover:underline">
+                <Github className="mr-2 h-4 w-4" />
+                File an issue on GitHub
+              </Link>
+            </li>
+            <li>
+              <Link href={urls.twitter} className="flex items-center hover:underline">
+                <Twitter className="mr-2 h-4 w-4" />
+                Message us on Twitter
+              </Link>
+            </li>
+            <li>
+              <Link href={urls.discord} className="flex items-center hover:underline">
+                <MessageCircle className="mr-2 h-4 w-4" />
+                Join our Discord channel
+              </Link>
+            </li>
+          </ul>
+        </CardContent>
+      </Card>
+
+      <p className="mt-6">
+        ITIN Helper is an open source project maintained by{' '}
+        <Link href={urls.aidan} className="text-primary hover:underline">Aidan Grimshaw</Link> and{' '}
+        <Link href={urls.zak} className="text-primary hover:underline">Zak Patterson</Link>.
       </p>
-      <p>
-        Contributions to the <Link href={urls.repo}>GitHub</Link> repository are
+      <p className="mb-6">
+        Contributions to the <Link href={urls.repo} className="text-primary hover:underline">GitHub</Link> repository are
         welcome.
       </p>
-      <a href="https://www.netlify.com">
-        <img
-          src={prefersDarkMode ? 'netlify-dark.svg' : 'netlify-light.svg'}
+
+      <Link href="https://www.netlify.com" className="inline-block">
+        <Image
+          src="/placeholder.svg?height=51&width=114"
+          width={114}
+          height={51}
           alt="Deploys by Netlify"
+          className="dark:invert"
         />
-      </a>
-    </>
+      </Link>
+    </div>
   )
 }
