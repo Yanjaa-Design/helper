@@ -74,7 +74,7 @@ export default function GettingStarted(): ReactElement {
         <li>You are a dependent or spouse of a nonresident alien visa holder</li>
       </ul>
       <h2>Get Started</h2>
-      {isWeb() ? doubleButtons : singleButtons}
+      {singleButtons}
     </>
   )
 }
